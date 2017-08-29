@@ -16,6 +16,7 @@ function addCats(cats) {
   for(var i = 0; i < cats.length; i++) {
     //creates div to hold each "cat block"(name, image, counter)
     var catElem = document.createElement('div');
+    catElem.className = ("catElem");
     //adds cat name to document
     var catName = document.createElement('h3');
     catName.innerHTML = cats[i].name;
@@ -39,20 +40,16 @@ function addCats(cats) {
     catCounter.innerHTML = cats[i].count;
     catElem.appendChild(catCounter);
 
+    $(document).ready(function() {
+      $('img').click(function(){
+        catCounter.innerHTML = parseInt($(this).next("h4").text());
+        catCounter++;
+        console.log(catCounter);
+        console.log(this);
+      });
+    });
 
     document.body.appendChild(catElem);
   };
 };
 addCats(cats);
-
-
-$(document).ready(function() {
-  $('img').click(function(){
-    var tally = parseInt($(this).next("h4").text());
-    tally++;
-    catCounter = tally;
-    console.log(catCounter);
-    console.log(this);
-
-  });
-});
