@@ -50,7 +50,9 @@ $(document).ready(function() {
   $('img').click(function(){
     var tally = parseInt($(this).next("h4").text());
     tally++;
-    console.log(this.tally);
+    catCounter = tally;
+    console.log(catCounter);
     console.log(this);
+
   });
 });
