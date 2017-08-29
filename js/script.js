@@ -40,16 +40,18 @@ function addCats(cats) {
     catCounter.innerHTML = cats[i].count;
     catElem.appendChild(catCounter);
 
-    $(document).ready(function() {
-      $('img').click(function(){
-        catCounter.innerHTML = parseInt($(this).next("h4").text());
-        catCounter++;
-        console.log(catCounter);
-        console.log(this);
-      });
-    });
-
     document.body.appendChild(catElem);
   };
 };
 addCats(cats);
+
+
+$(document).ready(function() {
+ $('img').click(function(){
+   var tally = parseInt($(this).next("h4").text());
+   tally++;
+    $(this).next("h4").text(tally++)
+   console.log(tally);
+   console.log(this);
+ });
+});
