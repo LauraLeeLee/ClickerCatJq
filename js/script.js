@@ -33,20 +33,13 @@ function addCats(cats) {
 
     //adds counter to document
     var catCounter = document.createElement('h4');
-
+    // added this to better visualize the console.logged element
     catCounter.id = "counter-" + cats[i].id
 
     catCounter.innerHTML = cats[i].count;
     catElem.appendChild(catCounter);
 
-    //adds counter tally from clicks to document
-    catImage.addEventListener('click', (function(currentCat){
-      return function(){
-        console.log('Click handler fired! Here is the catImage element reference: ', catImage)
-        console.log('...and here is the currentCat element reference: ', currentCat)
-        catCounter.innerHTML = Number(catCounter.innerHTML)+ 1;
-      };
-    })(catCounter));
+
     document.body.appendChild(catElem);
   };
 };
@@ -57,7 +50,7 @@ $(document).ready(function() {
   $('img').click(function(){
     var tally = parseInt($(this).next("h4").text());
     tally++;
-    console.log(tally);
+    console.log(this.tally);
     console.log(this);
   });
 });
