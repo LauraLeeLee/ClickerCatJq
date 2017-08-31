@@ -44,9 +44,9 @@ function addCats(cats) {
     $('catCounter').attr('id', 'counter-' + 'cats[i].id');
 
     $('catCounter').html('cats[i].count');
-    $('catElem').append(catCounter);
+    $('catElem').append('catCounter');
 
-    $('body').append(catElem);
+    $('body').append('catElem');
     //document.body.appendChild(catElem);
   };
 };
