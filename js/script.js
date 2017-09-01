@@ -17,24 +17,19 @@ function addCats(cats) {
     //creates div to hold each "cat block"(name, image, counter)
     var catElem = document.createElement('div');
     //document.createElement('div');
-      $('catElem').addClass('catElem');
+      $(catElem).addClass('catElem');
       $('body').append(catElem);
 
-
-    //catElem.className = ('catElem');
     //adds cat name to document
     var catName = document.createElement('h3');
-    //document.createElement('h3');
-    $(catElem).append('<h3></h3>');
-
+    //$(catElem).append('<h3></h3>');
     $(catName).html(cats[i].name);
     $(catElem).append(catName);
+    console.log(catName);
 
     //adds cat image to document
     var catImage = document.createElement('img');
-        //document.createElement('img');
-    $('body').append('<img></img>');
-
+    //catImage.src = cats[i].img;
     $(catImage).attr('src', 'cats[i].img');
     $(catImage).width('200px');
     //style.width = '200px';
@@ -42,18 +37,16 @@ function addCats(cats) {
     $(catElem).append(catImage);
 
     // added this to better visualize the console.logged element
-    $(catImage).attr('id', 'image-' + 'cats[i].id');
+    $(catImage).attr('id', 'image-' + cats[i].id);
+    console.log(catImage);
 
     //adds counter to document
-    var catCounter = $('body').append('<h4></h4>');
-    //document.createElement('h4');
-    // added this to better visualize the console.logged element
-    $(catCounter).attr('id', 'counter-' + 'cats[i].id');
-
+    var catCounter = document.createElement('h4');
     $(catCounter).html(cats[i].count);
+      // added this to better visualize the console.logged element
+    $(catCounter).attr('id', 'counter-' + 'cats[i].id');
     $(catElem).append(catCounter);
-
-    $('body').append(catElem);
+    console.log(catCounter);
     //document.body.appendChild(catElem);
   };
 };
